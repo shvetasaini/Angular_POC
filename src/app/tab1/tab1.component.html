@@ -11,6 +11,8 @@
         (startPauseEvent)="receiveStartPauseEevent($event)"
         [pausedAtCount]="pauseCountToShow"
         (startedOrPauseAtEvent)="recieveStartedOrPauseAtEvent($event)"
+        (totalStartedCountEvent)="recieveTotalStartedCountEvent($event)"
+        (totalpausedCountEvent)="recieveTotalPausedCountEvent($event)"
       ></app-timer-operation>
     </div>
   </div>
@@ -21,7 +23,11 @@
       ></app-timer-date-time-record>
     </div>
     <div class="timer-row-item">
-      <app-timer-action-record></app-timer-action-record>
+      <app-timer-action-record
+        [totalStartedCount]="totalStartedCount"
+        [totalPausedCount]="totalPausedCount"
+      >
+      </app-timer-action-record>
     </div>
   </div>
 </div>

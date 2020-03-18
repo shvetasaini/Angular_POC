@@ -11,6 +11,8 @@ export class Tab1Component implements OnInit {
   pauseCountToShow: number[] = [];
   counterInterval: any;
   startedOrPausedAt: string[] = [];
+  totalStartedCount: number = 0;
+  totalPausedCount: number = 0;
 
   constructor() {}
   ngOnInit(): void {}
@@ -34,5 +36,12 @@ export class Tab1Component implements OnInit {
   recieveStartedOrPauseAtEvent(startedOrPausedAt) {
     this.startedOrPausedAt.push(startedOrPausedAt);
     console.log(this.startedOrPausedAt);
+  }
+  recieveTotalStartedCountEvent(count) {
+    this.totalStartedCount = count;
+  }
+
+  recieveTotalPausedCountEvent(count) {
+    this.totalPausedCount = count;
   }
 }

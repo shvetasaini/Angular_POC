@@ -11,8 +11,8 @@ export class TimerOperationComponent implements OnInit {
   @Output() timerInputdataEvent = new EventEmitter<number>();
   @Output() startPauseEvent = new EventEmitter<boolean>();
   @Output() startedOrPauseAtEvent = new EventEmitter<string>();
-  @Output() startedCount = new EventEmitter<number>();
-  @Output() pausedCount = new EventEmitter<number>();
+  @Output() totalStartedCountEvent = new EventEmitter<number>();
+  @Output() totalpausedCountEvent = new EventEmitter<number>();
   startCountToRecord: number = 0;
   pausedCountToRecord: number = 0;
   @Input() pausedAtCount: number[] = [];
@@ -42,8 +42,13 @@ export class TimerOperationComponent implements OnInit {
             (new Date().toDateString() + " " + new Date().toLocaleTimeString())
     );
 
-    if (!isStarted) this.startedCount.emit(this.startCountToRecord + 1);
-    else this.startedCount.emit(this.startCountToRecord + 1);
+    if (!isStarted) {
+      this.startCountToRecord = this.startCountToRecord + 1;
+      this.totalStartedCountEvent.emit(this.startCountToRecord);
+    } else {
+      this.pausedCountToRecord = this.pausedCountToRecord + 1;
+      this.totalpausedCountEvent.emit(this.pausedCountToRecord);
+    }
 
     if (isStarted) element.dataset["isstarted"] = false;
     else element.dataset["isstarted"] = true;
