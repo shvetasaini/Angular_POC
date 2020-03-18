@@ -15,7 +15,7 @@ export class Tab1Component implements OnInit {
   totalPausedCount: number = 0;
 
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): {};
 
   receivetimerInputdata(intialTimer) {
     this.timerInputdata = intialTimer;
