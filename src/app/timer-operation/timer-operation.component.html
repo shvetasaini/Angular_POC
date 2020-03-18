@@ -1,0 +1,16 @@
+<div class="timer-operation">
+  <label for="timer-limit"> Enter timer limit: </label>
+  <input
+    type="number"
+    id="timer-limit"
+    [(ngModel)]="timerInputdata"
+    (keyup)="sendTimerInputdata()"
+  /><br />
+  <button (click)="onStartButtonClick($event)" data-isStarted="false">
+    Start/Pause
+  </button>
+  <button>Reset</button>
+  <ul>
+    <li *ngFor="let paused of pausedAtCount">Paused at : {{ paused }}</li>
+  </ul>
+</div>

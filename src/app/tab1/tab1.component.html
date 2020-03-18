@@ -1,0 +1,27 @@
+<div class="timer-container">
+  <div class="timer-row">
+    <div class="timer-row-item">
+      <app-count-down-timer
+        [timerInputdata]="timerInputdata"
+      ></app-count-down-timer>
+    </div>
+    <div class="timer-row-item">
+      <app-timer-operation
+        (timerInputdataEvent)="receivetimerInputdata($event)"
+        (startPauseEvent)="receiveStartPauseEevent($event)"
+        [pausedAtCount]="pauseCountToShow"
+        (startedOrPauseAtEvent)="recieveStartedOrPauseAtEvent($event)"
+      ></app-timer-operation>
+    </div>
+  </div>
+  <div class="timer-row">
+    <div class="timer-row-item">
+      <app-timer-date-time-record
+        [startedOrPausedAt]="startedOrPausedAt"
+      ></app-timer-date-time-record>
+    </div>
+    <div class="timer-row-item">
+      <app-timer-action-record></app-timer-action-record>
+    </div>
+  </div>
+</div>
