@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-tab1",
@@ -15,7 +15,7 @@ export class Tab1Component implements OnInit {
   totalPausedCount: number = 0;
 
   constructor() {}
-  ngOnInit(): {};
+  ngOnInit(): void {}
 
   receivetimerInputdata(intialTimer) {
     this.timerInputdata = intialTimer;

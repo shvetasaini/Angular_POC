@@ -1,6 +1,33 @@
-.floating-banner {
-  border: 2px solid;
-  height: 350px;
+.bg-1 {
+  background-color: #9400d3;
+}
+
+.bg-2 {
+  background-color: #4b0082;
+}
+
+.bg-3 {
+  background-color: #0000ff;
+}
+
+.bg-4 {
+  background-color: #00ff00;
+}
+
+.bg-5 {
+  background-color: #ffff00;
+}
+
+.bg-6 {
+  background-color: #ff7f00;
+}
+
+.bg-7 {
+  background-color: #ff0000;
+}
+
+.floating-banner h3 {
+  background-color: #fff;
 }
 
 .floating-banner-heading {

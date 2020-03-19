@@ -1,0 +1,33 @@
+<section>
+  <div class="timer-container">
+    <div class="row">
+      <div class="col-md-5 timer-item">
+        <app-count-down-timer
+          [timerInputdata]="timerInputdata"
+        ></app-count-down-timer>
+      </div>
+      <div class="col-md-6 offset-md-1 timer-item">
+        <app-timer-operation
+          (timerInputdataEvent)="receivetimerInputdata($event)"
+          (startPauseEvent)="receiveStartPauseEevent($event)"
+          [pausedAtCount]="pauseCountToShow"
+          (startedOrPauseAtEvent)="recieveStartedOrPauseAtEvent($event)"
+          (totalStartedCountEvent)="recieveTotalStartedCountEvent($event)"
+          (totalpausedCountEvent)="recieveTotalPausedCountEvent($event)"
+        ></app-timer-operation>
+      </div>
+      <div class="col-md-5">
+        <app-timer-date-time-record
+          [startedOrPausedAt]="startedOrPausedAt"
+        ></app-timer-date-time-record>
+      </div>
+      <div class="col-md-6 offset-md-1">
+        <app-timer-action-record
+          [totalStartedCount]="totalStartedCount"
+          [totalPausedCount]="totalPausedCount"
+        >
+        </app-timer-action-record>
+      </div>
+    </div>
+  </div>
+</section>

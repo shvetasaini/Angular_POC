@@ -1,0 +1,31 @@
+<section>
+  <div class="filter-container">
+    <div class="product-view-icon">
+      <img class="grid-icon" src="../../assets/Images/grid.svg" alt="grid" />
+      <img class="list-icon" src="../../assets/Images/list.svg" alt="list" />
+    </div>
+    <select name="" id="" (change)="productValue = $event.target.value">
+      <option>Select</option>
+      <option value="UnitPrice">Price:Low to High</option>
+      <option value="ProductName">Name</option>
+    </select>
+  </div>
+  <div class="grid-container">
+    <div
+      class="grid-item"
+      *ngFor="let product of products | sort: productValue"
+    >
+      <img
+        class="grid-img"
+        src="https://via.placeholder.com/100"
+        alt="Product Image"
+      />
+      <div class="product-name">
+        {{ product.ProductName }}
+      </div>
+      <div class="product-price">
+        {{ product.UnitPrice | currency }}
+      </div>
+    </div>
+  </div>
+</section>

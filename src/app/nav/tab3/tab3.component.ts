@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { PhotoApiService } from "../services/PhotoApi.service";
+import { PhotoApiService } from "../../services/PhotoApi.service";
 
 @Component({
   selector: "app-tab3",

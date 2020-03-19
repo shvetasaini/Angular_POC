@@ -1,0 +1,28 @@
+<div class="timer-operation">
+  <div class="form-group">
+    <label for="timer-limit" class="font-weight-bold mr-2">
+      Enter timer limit:
+    </label>
+    <input
+      class="form-control"
+      type="number"
+      id="timer-limit"
+      [(ngModel)]="timerInputdata"
+      (keyup)="sendTimerInputdata()"
+    />
+  </div>
+  <br />
+  <button
+    class="btn btn-primary"
+    (click)="onStartButtonClick($event)"
+    data-isStarted="false"
+  >
+    Start/Pause
+  </button>
+  <button class="btn btn-primary ml-1">Reset</button>
+  <ul class="count-down-timer-list">
+    <li class="font-weight-bold" *ngFor="let paused of pausedAtCount">
+      Paused at : {{ paused }}
+    </li>
+  </ul>
+</div>
