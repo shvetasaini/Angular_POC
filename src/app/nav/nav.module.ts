@@ -12,6 +12,7 @@ import { CountDownTimerComponent } from "./tab1/count-down-timer/count-down-time
 import { NavComponent } from "./nav.component";
 import { FormsModule } from "@angular/forms";
 import { PipesModule } from "../pipe/pipes.module";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import { PipesModule } from "../pipe/pipes.module";
     TimerDateTimeRecordComponent,
     TimerActionRecordComponent
   ],
-  imports: [CommonModule, NavRoutingModule, FormsModule, PipesModule],
+  imports: [
+    CommonModule,
+    NavRoutingModule,
+    FormsModule,
+    PipesModule,
+    FontAwesomeModule
+  ],
   exports: [NavComponent]
 })
 export class NavModule {}

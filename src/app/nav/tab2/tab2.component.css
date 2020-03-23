@@ -88,3 +88,13 @@
     transform: translate(0);
   }
 }
+
+.down-arrow,
+.up-arrow {
+  cursor: pointer;
+}
+
+.down-arrow:hover,
+.up-arrow:hover {
+  background-color: grey;
+}

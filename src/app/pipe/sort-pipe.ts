@@ -17,9 +17,17 @@ export class SortPipe implements PipeTransform {
     };
   }
 
-  transform(data: any[], attrName: string) {
-    if (!data || !data.length || !attrName) return data;
+  private getDescComparer(comparer): Comparer {
+    return function(p1: any, p2: any): number {
+      return comparer(p1, p2) * -1;
+    };
+  }
+
+  transform(data: any[], attrName: string, isDesc: boolean = false) {
     let comparer = this.getComparer(attrName);
+    if (isDesc) {
+      comparer = this.getDescComparer(comparer);
+    }
     data.sort(comparer);
     return data;
   }

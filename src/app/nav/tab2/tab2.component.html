@@ -21,3 +21,34 @@
     </div>
   </div>
 </section>
+
+<section>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let key of keys">
+          {{ key }}
+          <div class="d-block pull-right">
+            <div
+              class="up-arrow"
+              data-isdesc="true"
+              (click)="clickDecsIcon($event, key)"
+            >
+              <fa-icon [icon]="faSort"></fa-icon>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data | sort: columnToSort:IsDesc">
+        <td>{{ item.Name }}</td>
+        <td>{{ item.Class }}</td>
+        <td>{{ item.Section }}</td>
+        <td>{{ item.Sub1 }}</td>
+        <td>{{ item.Sub2 }}</td>
+        <td>{{ item.Sub3 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
